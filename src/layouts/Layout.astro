@@ -30,13 +30,5 @@ const { title } = Astro.props;
       <slot />
     </div>
     <Footer companyName="Test Company" />
-    <script>
-      const drawerToggle = document.getElementById("drawer-toggle");
-      const drawer = document.getElementById("drawer");
-
-      drawerToggle?.addEventListener("click", () => {
-        drawer?.classList.toggle("translate-x-full");
-      });
-    </script>
   </body>
 </html>
