@@ -6,7 +6,7 @@ interface Props {
 const { companyName = "Company Name" } = Astro.props;
 ---
 
-<footer class="bg-gray-900 text-white">
+<footer class="bg-paletteColor1 text-white">
   <div class="md:flex justify-between px-4 py-3">
     <div
       class="flex w-full items-center justify-center md:flex md:justify-between md:w-fit pb-1 md:pb-0"
@@ -41,7 +41,9 @@ const { companyName = "Company Name" } = Astro.props;
     <div
       class="flex w-full items-center justify-center md:flex md:justify-between md:w-fit"
     >
-      <p class="text-sm">© 2023 {companyName}. All rights reserved.</p>
+      <p class="text-sm font-base">
+        © 2023 {companyName}. All rights reserved.
+      </p>
     </div>
   </div>
 </footer>
