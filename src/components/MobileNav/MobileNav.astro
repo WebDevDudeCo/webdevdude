@@ -1,0 +1,52 @@
+---
+import SideNav from "../SideNav/SideNav.astro";
+---
+
+<div class="md:hidden absolute right-4">
+  <div class="flex-col">
+    <button
+      id="drawer-toggle"
+      class="flex items-center justify-center w-10 h-10 rounded-md focus:outline-none transition duration-300"
+    >
+      <span class="sr-only">Open main menu</span>
+      <ul class="list-none p-0 m-0">
+        <li
+          class="w-6 h-0.5 bg-paletteColor1 rounded-sm transform transition duration-300"
+        >
+        </li>
+        <li
+          class="w-6 h-0.5 bg-paletteColor1 rounded-sm mt-1 transform transition duration-300"
+        >
+        </li>
+        <li
+          class="w-6 h-0.5 bg-paletteColor1 rounded-sm mt-1 transform transition duration-300"
+        >
+        </li>
+      </ul>
+    </button>
+  </div>
+  <SideNav />
+</div>
+
+<style>
+  #drawer-toggle li {
+    background-color: bg-paletteColor1;
+  }
+
+  #drawer-toggle:hover li {
+    background-color: gray;
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const drawerToggle = document.getElementById("drawer-toggle");
+    const drawer = document.getElementById("drawer");
+    console.log("im hit!");
+
+    drawerToggle?.addEventListener("click", () => {
+      console.log("click");
+      drawer?.classList.toggle("translate-x-full");
+    });
+  });
+</script>
