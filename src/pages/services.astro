@@ -7,12 +7,12 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Template Title">
   <Main>
     <div class="min-h-screen flex flex-col items-center">
-      <p class="text-3xl font-bold text-gray-800 mb-4 pb-2">
+      <p class="text-3xl font-bold text-paletteColor1 mb-4 pb-2">
         So, What Do <span class="text-paletteColor3">We</span> Do<span
           class="text-paletteColor3">?</span
         >
       </p>
-      <div class="pb-6 animate-fade-in">
+      <div class="animate-fade-in">
         <div class="pb-8">
           <p class="text-lg italic text-gray-800 mb-4 pb-2 relative">
             <span class="quotation-mark text-paletteColor3 text-3xl font-mono"
@@ -27,10 +27,15 @@ import Layout from "../layouts/Layout.astro";
               >"</span
             >
           </p>
-          <div class="left-1/4 w-3/4 h-0.5 bg-paletteColor4 mx-auto"></div>
+          <div class="left-1/4 w-3/5 h-0.5 bg-paletteColor4 mx-auto"></div>
         </div>
       </div>
-      <div class="pb-14 animate-fade-in">
+      <div class="pb-14 animate-fade-in justify-center">
+        <p
+          class="text-3xl font-bold text-paletteColor1 mb-4 pb-2 w-full justify-center inline-flex"
+        >
+          Services
+        </p>
         <Card
           title="Custom Responsive Website"
           bullets={[
@@ -39,7 +44,8 @@ import Layout from "../layouts/Layout.astro";
             "On-page SEO",
             "Hosting included",
           ]}
-          body="test body"
+          modalBody="Test body"
+          ;
           href="/services"
           imageSrc="/images/computer.webp"
         />
@@ -52,7 +58,7 @@ import Layout from "../layouts/Layout.astro";
             "Easy call or text support",
             "Graphics included",
           ]}
-          body="test body"
+          modalBody="test body"
           href="/services"
           imageSrc="/images/edit.webp"
         />
@@ -61,7 +67,7 @@ import Layout from "../layouts/Layout.astro";
         <Card
           title="Google Business Account"
           bullets={["Setup & optimization"]}
-          body="test body"
+          modalBody="test body"
           href="/services"
           imageSrc="/images/business.webp"
         />
@@ -70,11 +76,17 @@ import Layout from "../layouts/Layout.astro";
         <Card
           title="Traffic-Boosting Focus"
           bullets={["High-ranking, SEO-friendly website", "We handle it all"]}
-          body="test body"
+          modalBody="test body"
           href="/services"
           imageSrc="/images/traffic.webp"
         />
       </div>
+
+      <p
+        class="text-3xl font-bold text-paletteColor1 mb-4 pb-2 w-full justify-center inline-flex"
+      >
+        Pricing
+      </p>
     </div>
   </Main>
 
@@ -103,7 +115,7 @@ import Layout from "../layouts/Layout.astro";
   }
   .animate-fade-in {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
   }
   .animate-fade-in-active {
     opacity: 1;
