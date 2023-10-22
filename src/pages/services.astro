@@ -8,9 +8,29 @@ import Layout from "../layouts/Layout.astro";
   <Main>
     <div class="min-h-screen flex flex-col items-center">
       <p class="text-3xl font-bold text-gray-800 mb-4 pb-2">
-        Service Explained
+        So, What Do <span class="text-paletteColor3">We</span> Do<span
+          class="text-paletteColor3">?</span
+        >
       </p>
-      <div class="pb-14">
+      <div class="pb-6 animate-fade-in">
+        <div class="pb-8">
+          <p class="text-lg italic text-gray-800 mb-4 pb-2 relative">
+            <span class="quotation-mark text-paletteColor3 text-3xl font-mono"
+              >"</span
+            >
+             At WebDevDude, we're all about keeping it real. Our mission? To
+            make your online presence hassle-free and standout-worthy. We've got
+            the techy stuff covered, so you can do what you do best - run your
+            business. And guess what? We're just a call or text away. Check out
+            our web services below, and let's take your online game up a notch.
+            <span class="quotation-mark text-paletteColor3 text-3xl font-mono"
+              >"</span
+            >
+          </p>
+          <div class="left-1/4 w-3/4 h-0.5 bg-paletteColor4 mx-auto"></div>
+        </div>
+      </div>
+      <div class="pb-14 animate-fade-in">
         <Card
           title="Custom Responsive Website"
           bullets={[
@@ -21,11 +41,10 @@ import Layout from "../layouts/Layout.astro";
           ]}
           body="test body"
           href="/services"
-          ,
           imageSrc="/images/computer.webp"
         />
       </div>
-      <div class="pb-14">
+      <div class="pb-14 animate-fade-in">
         <Card
           title="Unlimited Edits & Graphics"
           bullets={[
@@ -38,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
           imageSrc="/images/edit.webp"
         />
       </div>
-      <div class="pb-14">
+      <div class="pb-14 animate-fade-in">
         <Card
           title="Google Business Account"
           bullets={["Setup & optimization"]}
@@ -47,7 +66,7 @@ import Layout from "../layouts/Layout.astro";
           imageSrc="/images/business.webp"
         />
       </div>
-      <div class="pb-14">
+      <div class="pb-14 animate-fade-in">
         <Card
           title="Traffic-Boosting Focus"
           bullets={["High-ranking, SEO-friendly website", "We handle it all"]}
@@ -58,4 +77,35 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </Main>
+
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const cards = document.querySelectorAll(".animate-fade-in");
+      const animateCards = () => {
+        cards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+          const cardBottom = card.getBoundingClientRect().bottom;
+          const windowHeight = window.innerHeight;
+          if (cardTop < windowHeight && cardBottom >= 0) {
+            card.classList.add("animate-fade-in-active");
+          }
+        });
+      };
+      animateCards();
+      window.addEventListener("scroll", animateCards);
+    });
+  </script>
 </Layout>
+
+<style>
+  .hidden {
+    opacity: 0;
+  }
+  .animate-fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .animate-fade-in-active {
+    opacity: 1;
+  }
+</style>
