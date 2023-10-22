@@ -1,10 +1,11 @@
 ---
+import { Image } from "astro:assets";
 interface Props {
   title: string;
   body: string;
   href: string;
   bullets?: string[];
-  imageSrc?: string;
+  imageSrc: string;
 }
 
 const { href, title, body, bullets, imageSrc } = Astro.props;
@@ -14,8 +15,10 @@ const { href, title, body, bullets, imageSrc } = Astro.props;
   <div class="bg-white rounded-lg overflow-hidden relative">
     <div class="flex justify-center items-center h-auto">
       <div class="w-38 h-38 overflow-hidden inline-block">
-        <img
+        <Image
           src={imageSrc}
+          width={250}
+          height={250}
           alt="Circle Image"
           class="w-full h-full object-cover"
         />
