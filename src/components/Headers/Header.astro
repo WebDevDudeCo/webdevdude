@@ -2,81 +2,20 @@
 import MobileNav from "../MobileNav/MobileNav.astro";
 
 interface Props {
-  logo: string;
-  title: string;
+  logo?: string;
+  title?: string;
   subHeaders: "top" | "bottom" | "both" | "none";
 }
 
-const {
-  title = "Title",
-  logo = "/temp_logo.png",
-  subHeaders = "none",
-} = Astro.props;
-
-const showTopSubHeader = subHeaders === "top" || subHeaders === "both";
+const { title = "Title", logo = "" } = Astro.props;
 ---
 
 <header class="text-primary fixed w-full z-10 shadow-md font-base top-0">
-  {
-    showTopSubHeader && (
-      <nav class="flex items-center justify-evenly px-4 py-3 pl-6 pr-6 h-8 bg-paletteColor1">
-        <div class="">
-          <ul class="flex items-center space-x-4">
-            <li>
-              <a
-                href="#"
-                class="text-xl hover:text-gray-300 transition duration-300"
-              >
-                <i class="fa fa-facebook" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xl hover:text-gray-300 transition duration-300"
-              >
-                <i class="fa fa-twitter" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xl hover:text-gray-300 transition duration-300 pr-1"
-              >
-                <i class="fa fa-instagram" />
-              </a>
-            </li>
-            <li>
-              <p class="group transition duration-300 text-lg text-paletteColor4">
-                /
-              </p>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xl hover:text-gray-300 transition duration-300"
-              >
-                <i class="fa fa-phone" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="group transition duration-300 text-md pr-6 text-paletteColor5"
-              >
-                219-555-5555
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    )
-  }
   <nav
     class="flex items-center px-4 py-3 pl-6 pr-6 h-16 bg-primary justify-evenly"
   >
-    <div class="flex items-center mx-auto md:mx-0 text-paletteColor3">
-      <img src={logo} alt="Logo" class="h-8 mr-2 pr-2" />
+    <div class="flex items-center mx-auto md:mx-0 text-white">
+      {logo && <img src={logo} alt="Logo" class="h-8 mr-2 pr-2" />}
       <a href="#" class="font-bold text-xl">{title}</a>
     </div>
     <div class="hidden md:block">
@@ -105,10 +44,6 @@ const showTopSubHeader = subHeaders === "top" || subHeaders === "both";
             class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-paletteColor4"
           ></span>
         </a>
-        <button
-          class="bg-paletteColor4 text-black px-4 py-2 rounded-md hover:bg-paletteColor1 hover:text-paletteColor5 transition duration-300 font-medium"
-          >Get A Quote!</button
-        >
       </ul>
     </div>
 

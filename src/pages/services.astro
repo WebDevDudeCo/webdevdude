@@ -1,13 +1,60 @@
 ---
+import Card from "../components/Card.astro";
 import Main from "../components/Main/Main.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Template Title">
   <Main>
-    <div class="min-h-screen">
-      <div class="flex justify-center">
-        <p class="text-gray-400 italic">Services</p>
+    <div class="min-h-screen flex flex-col items-center">
+      <p class="text-3xl font-bold text-gray-800 mb-4 pb-2">
+        Service Explained
+      </p>
+      <div class="pb-14">
+        <Card
+          title="Custom Responsive Website"
+          bullets={[
+            "5 unique pages + contact page",
+            "Handwritten code for design control",
+            "On-page SEO",
+            "Hosting included",
+          ]}
+          body="test body"
+          href="/services"
+          ,
+          imageSrc="/computer.png"
+        />
+      </div>
+      <div class="pb-14">
+        <Card
+          title="Unlimited Edits & Graphics"
+          bullets={[
+            "Quick edits for promos",
+            "Easy call or text support",
+            "Graphics included",
+          ]}
+          body="test body"
+          href="/services"
+          imageSrc="/editor.png"
+        />
+      </div>
+      <div class="pb-14">
+        <Card
+          title="Google Business Account"
+          bullets={["Setup & optimization"]}
+          body="test body"
+          href="/services"
+          imageSrc="/business.png"
+        />
+      </div>
+      <div class="pb-14">
+        <Card
+          title="Traffic-Boosting Focus"
+          bullets={["High-ranking, SEO-friendly website", "We handle it all"]}
+          body="test body"
+          href="/services"
+          imageSrc="/traffic.png"
+        />
       </div>
     </div>
   </Main>

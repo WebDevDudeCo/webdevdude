@@ -3,14 +3,13 @@ export default {
 	theme: {
 	  extend: {
 		colors: {
-		  primary: '#FFF', // white
+		  primary: '#091625', // white
 		  secondary: '#FFC107', // yellow
 		  accent: '#795548', // brown
-		  paletteColor1: '#212B2E', // Gunmetal
-		  paletteColor2: '#383E27', // Black Olive
-		  paletteColor3: '#151F22', // Eerie Black
-		  paletteColor4: '#82754F', // Coyote
-		  paletteColor5: '#D2D4DA' // French Grey
+		  paletteColor1: '#091625', // FireFly
+		  paletteColor2: '#C4A98E', // Indian Khaki
+		  paletteColor3: '#35A4AB', // Keppel
+		  paletteColor4: '#2578A0', // Jelly Bean
 		},
       fontFamily: {
         'base': ['Montserrat', 'sans-serif'],
