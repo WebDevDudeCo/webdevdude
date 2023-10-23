@@ -2,6 +2,7 @@
 import Card from "../components/Card/Card.astro";
 import Main from "../components/Main/Main.astro";
 import Layout from "../layouts/Layout.astro";
+import PriceCard from "../components/PriceCard/PriceCard.astro";
 ---
 
 <Layout title="Template Title">
@@ -20,11 +21,12 @@ import Layout from "../layouts/Layout.astro";
             <span class="quotation-mark text-paletteColor3 text-3xl font-mono"
               >"</span
             >
-             At WebDevDude, we're all about keeping it real. Our mission? To
-            make your online presence hassle-free and standout-worthy. We've got
-            the techy stuff covered, so you can do what you do best - run your
-            business. And guess what? We're just a call or text away. Check out
-            our web services below, and let's take your online game up a notch.
+             At WebDevDude, we're not just a web development service; we're your
+            trusty allies in the online world. Our mission? Making your online
+            presence hassle-free and helping it stand out. You handle <strong
+              class="font-bold text-paletteColor3">your business</strong
+            >, we handle the tech. We're just a call or text away. Let's take
+            your online game up a notch with our web services
             <span class="quotation-mark text-paletteColor3 text-3xl font-mono"
               >"</span
             >
@@ -87,11 +89,25 @@ import Layout from "../layouts/Layout.astro";
         />
       </div>
 
-      <p
-        class="text-3xl font-bold text-paletteColor1 mb-4 pb-2 w-full justify-center inline-flex"
-      >
-        Pricing
-      </p>
+      <div class="pb-14 animate-fade-in">
+        <p
+          class="text-3xl font-bold text-paletteColor1 mb-4 pb-2 w-full justify-center inline-flex"
+        >
+          Pricing
+        </p>
+        <PriceCard
+          price={75}
+          packageName="Standard"
+          description="$0 Down"
+          subTitle="5 Pages + Contact Page"
+          bullets={[
+            "Mobile-Friendly Website",
+            "Unlimited Edits & Support",
+            "Google Business Setup",
+            "Traffic Boosting & SEO",
+          ]}
+        />
+      </div>
     </div>
   </Main>
 
