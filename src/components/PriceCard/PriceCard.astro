@@ -23,6 +23,9 @@ const { subTitle, price, description, packageName, bullets } = Astro.props;
         <span class="text-gray-500 text-sm">$</span>
         <span class="text-paletteColor1 text-5xl">{price}</span>
         <span class="text-gray-500 text-lg"> / month</span>
+        <div class="text-gray-500 text-xs pt-2">
+          Valid for the first 6 months, then $100/month
+        </div>
       </div>
       {
         bullets ? (
