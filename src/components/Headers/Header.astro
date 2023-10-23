@@ -7,10 +7,10 @@ interface Props {
   subHeaders: "top" | "bottom" | "both" | "none";
 }
 
-const { title = "Title", logo = "" } = Astro.props;
+const { title = "", logo = "" } = Astro.props;
 ---
 
-<header class="text-primary fixed w-full z-10 shadow-md font-base top-0">
+<header class="text-primary fixed w-full z-10 shadow-xl font-base top-0">
   <nav
     class="flex items-center px-4 py-3 pl-6 pr-6 h-16 bg-primary justify-evenly"
   >
