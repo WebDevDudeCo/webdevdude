@@ -16,7 +16,7 @@ const { title = "Title", logo = "" } = Astro.props;
   >
     <div class="flex items-center mx-auto md:mx-0 text-white">
       {logo && <img src={logo} alt="Logo" class="h-8 mr-2 pr-2" />}
-      <a href="#" class="font-bold text-xl">{title}</a>
+      <a href="/" class="font-bold text-xl">{title}</a>
     </div>
     <div class="hidden md:block">
       <ul class="flex items-center space-x-2 text-white">
@@ -38,7 +38,7 @@ const { title = "Title", logo = "" } = Astro.props;
             class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-paletteColor4"
           ></span>
         </a>
-        <a href="contact" class="group transition text-lg pr-6">
+        <a href="/contact" class="group transition text-lg pr-6">
           Contact
           <span
             class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-paletteColor4"
