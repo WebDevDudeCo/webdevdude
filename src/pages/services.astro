@@ -7,11 +7,13 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Template Title">
   <Main>
     <div class="min-h-screen flex flex-col items-center">
-      <p class="text-3xl font-bold text-paletteColor1 mb-4 pb-2">
-        So, What Do <span class="text-paletteColor3">We</span> Do<span
-          class="text-paletteColor3">?</span
-        >
-      </p>
+      <div class="animate-fade-in">
+        <p class="text-3xl font-bold text-paletteColor1 mb-4 pb-2">
+          So, What Do <span class="text-paletteColor3">We</span> Do<span
+            class="text-paletteColor3">?</span
+          >
+        </p>
+      </div>
       <div class="animate-fade-in">
         <div class="pb-8">
           <p class="text-lg italic text-gray-800 mb-4 pb-2 relative">
@@ -37,6 +39,7 @@ import Layout from "../layouts/Layout.astro";
           Services
         </p>
         <Card
+          id="1"
           title="Custom Responsive Website"
           bullets={[
             "5 unique pages + contact page",
@@ -44,39 +47,41 @@ import Layout from "../layouts/Layout.astro";
             "On-page SEO",
             "Hosting included",
           ]}
-          modalBody="Test body"
-          ;
+          modalBody="We're not about fancy jargon; we're here to keep it down-to-earth. We'll whip up a fully responsive and mobile-friendly website from scratch, no cookie-cutter templates in sight. You get 5 unique pages, including a nifty contact page, and we handwrite the code to make it truly yours. We'll even throw in some SEO magic for better visibility, and guess what? Hosting fees? They're on the house. Sit back, relax, and let's make your online space shine!"
           href="/services"
           imageSrc="/images/computer.webp"
         />
       </div>
       <div class="pb-14 animate-fade-in">
         <Card
+          id="2"
           title="Unlimited Edits & Graphics"
           bullets={[
             "Quick edits for promos",
             "Easy call or text support",
             "Graphics included",
           ]}
-          modalBody="test body"
+          modalBody="We're all about keeping it hassle-free. You've got the power to make unlimited edits and updates to your website, no strings attached. Got a last-minute promo or a cool new offer? We're quick on the draw. Plus, we're not your typical techies – just give us a call or shoot us a text whenever you need support or want to make changes. And if your site could use an extra touch of visual flair, we've got the skills to make it pop. It's web development, but friendlier."
           href="/services"
           imageSrc="/images/edit.webp"
         />
       </div>
       <div class="pb-14 animate-fade-in">
         <Card
+          id="3"
           title="Google Business Account"
           bullets={["Setup & optimization"]}
-          modalBody="test body"
+          modalBody="Let's talk about Google, the big player. We'll help you craft a killer Google Business presence to boost your online visibility. Setting up and optimizing your Google Business Account? We've got your back. It's all about making your mark in the digital world, and we're here to guide you with a friendly face and some good ol' know-how."
           href="/services"
           imageSrc="/images/business.webp"
         />
       </div>
       <div class="pb-14 animate-fade-in">
         <Card
+          id="4"
           title="Traffic-Boosting Focus"
           bullets={["High-ranking, SEO-friendly website", "We handle it all"]}
-          modalBody="test body"
+          modalBody="Let's cut through the tech talk, shall we? Our number one mission is to drive traffic straight to your website and, in the end, boost your business. How do we do it? We whip up a high-ranking, top-performing website that snags a primo spot in Google's search results. And guess what? We take care of all the nitty-gritty details so you don't have to. No need to dive into the tech stuff; we've got your back. It's web development with a side of friendly service – that's our game."
           href="/services"
           imageSrc="/images/traffic.webp"
         />

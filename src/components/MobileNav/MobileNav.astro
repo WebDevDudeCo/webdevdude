@@ -42,10 +42,8 @@ import SideNav from "../SideNav/SideNav.astro";
   document.addEventListener("astro:page-load", () => {
     const drawerToggle = document.getElementById("drawer-toggle");
     const drawer = document.getElementById("drawer");
-    console.log("im hit!");
 
     drawerToggle?.addEventListener("click", () => {
-      console.log("click");
       drawer?.classList.toggle("translate-x-full");
     });
   });
