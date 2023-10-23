@@ -1,9 +1,13 @@
 ---
 interface Props {
   companyName: string;
+  location: string;
 }
 
-const { companyName = "Company Name" } = Astro.props;
+const {
+  companyName = "Company Name",
+  location = "Northwest Indiana/Lowell area",
+} = Astro.props;
 ---
 
 <footer class="bg-paletteColor1 text-white">
@@ -14,26 +18,18 @@ const { companyName = "Company Name" } = Astro.props;
       <ul class="flex items-center space-x-4">
         <li>
           <a
-            href="#"
+            href="tel:+12197652170"
             class="text-xl text-paletteColor2 hover:text-gray-300 transition duration-300"
           >
-            <i class="fa fa-facebook"></i>
+            <i class="fa fa-phone"></i>
           </a>
         </li>
         <li>
           <a
-            href="#"
+            href="/contact"
             class="text-xl text-paletteColor2 hover:text-gray-300 transition duration-300"
           >
-            <i class="fa fa-twitter"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            class="text-xl text-paletteColor2 hover:text-gray-300 transition duration-300"
-          >
-            <i class="fa fa-instagram"></i>
+            <i class="fa fa-envelope"></i>
           </a>
         </li>
       </ul>
@@ -42,7 +38,14 @@ const { companyName = "Company Name" } = Astro.props;
       class="flex w-full items-center justify-center md:flex md:justify-between md:w-fit"
     >
       <p class="text-sm font-base text-paletteColor2">
-        © 2023 {companyName}. All rights reserved.
+        © 2023 {companyName} All rights reserved.
+      </p>
+    </div>
+    <div
+      class="flex w-full items-center justify-center md:flex md:justify-between md:w-fit"
+    >
+      <p class="text-sm font-base text-paletteColor2">
+        Based out of {location}
       </p>
     </div>
   </div>

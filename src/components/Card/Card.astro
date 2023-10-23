@@ -55,7 +55,7 @@ const { href, title, modalBody, bullets, imageSrc, id } = Astro.props;
     </div>
     <div class="px-6 py-4 bg-paletteColor1 text-center">
       <button
-        class="text-white font-bold hover:text-paletteColor2 duration-300"
+        class="text-white font-bold hover:text-paletteColor2 duration-300 w-full"
         onclick={`document.getElementById('modal-${id}').classList.add('block'); document.getElementById('modal-${id}').classList.remove('hidden'); document.getElementById('modal-title-${id}').textContent = '${title}'; document.getElementById('modal-body-${id}').textContent = '${modalBody.replace(
           /'/g,
           "\\'"
