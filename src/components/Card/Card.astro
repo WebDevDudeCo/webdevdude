@@ -8,9 +8,11 @@ interface Props {
   bullets?: string[];
   imageSrc: string;
   id: string;
+  selectPlansOnly?: boolean;
 }
 
-const { href, title, modalBody, bullets, imageSrc, id } = Astro.props;
+const { href, title, modalBody, bullets, imageSrc, id, selectPlansOnly } =
+  Astro.props;
 ---
 
 <div class="w-full" data-card-id={id}>
@@ -29,6 +31,13 @@ const { href, title, modalBody, bullets, imageSrc, id } = Astro.props;
     <div class="px-6 py-4 text-center">
       <div class="font-bold text-xl mb-2 relative">
         {title}
+        {
+          selectPlansOnly && (
+            <div class="text-sm text-gray-500 font-normal mt-2">
+              Select plans only
+            </div>
+          )
+        }
       </div>
       <div class="left-1/4 w-2/3 h-0.5 bg-paletteColor2 mx-auto"></div>
       {
