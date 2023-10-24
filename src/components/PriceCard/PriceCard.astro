@@ -3,12 +3,24 @@ import CircleCheck from "../Icons/CircleCheck.astro";
 interface Props {
   subTitle: string;
   price: number;
-  description: string;
+  type: string;
+  description?: string;
+  priceDescription?: string;
   packageName: string;
+  buttonLabel?: string;
   bullets?: string[];
 }
 
-const { subTitle, price, description, packageName, bullets } = Astro.props;
+const {
+  subTitle,
+  price,
+  description,
+  packageName,
+  bullets,
+  type,
+  buttonLabel = "Let's Get Started",
+  priceDescription,
+} = Astro.props;
 ---
 
 <div class="w-full border border-gray-300 rounded-lg shadow-xl">
@@ -22,9 +34,13 @@ const { subTitle, price, description, packageName, bullets } = Astro.props;
       <div class="font-bold text-4xl mb-2 relative">
         <span class="text-gray-500 text-sm">$</span>
         <span class="text-paletteColor1 text-5xl">{price}</span>
-        <span class="text-gray-500 text-lg"> / month</span>
+        {
+          type === "monthly" && (
+            <span class="text-gray-500 text-lg"> / month</span>
+          )
+        }
         <div class="text-gray-500 text-xs pt-2">
-          Valid for the first 6 months, then $100/month
+          {priceDescription}
         </div>
       </div>
       {
@@ -52,7 +68,8 @@ const { subTitle, price, description, packageName, bullets } = Astro.props;
         href="/contact"
         class="block text-white font-bold hover:text-paletteColor2 duration-300 py-2 px-4 rounded"
       >
-        Let's Partner <span class="text-paletteColor2">&rarr;</span>
+        {buttonLabel}
+        <span class="text-paletteColor2">&rarr;</span>
       </a>
     </div>
   </div>

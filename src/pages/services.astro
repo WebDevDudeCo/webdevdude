@@ -95,13 +95,29 @@ import PriceCard from "../components/PriceCard/PriceCard.astro";
         >
           Pricing
         </p>
+        <div class="pb-6">
+          <PriceCard
+            price={1000}
+            priceDescription="+ $5 /month hosting fee"
+            type="fixed"
+            packageName="Basic"
+            subTitle="5 Pages + Contact Page"
+            buttonLabel="Let's Partner"
+            bullets={[
+              "High Performing Responsive Website",
+              "Google Business Setup",
+            ]}
+          />
+        </div>
         <PriceCard
           price={75}
-          packageName="Basic"
+          type="monthly"
+          packageName="Partnership"
+          priceDescription="Valid for the first 6 months, then $100/month"
           description="$0 Down"
           subTitle="5 Pages + Contact Page"
           bullets={[
-            "Mobile-Friendly Website",
+            "High Performing Responsive Website",
             "Unlimited Edits & Support",
             "Google Business Setup",
             "Traffic Boosting & SEO",
