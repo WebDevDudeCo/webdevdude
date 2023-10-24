@@ -9,6 +9,7 @@ interface Props {
   packageName: string;
   buttonLabel?: string;
   bullets?: string[];
+  disclaimer?: string;
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   type,
   buttonLabel = "Let's Get Started",
   priceDescription,
+  disclaimer,
 } = Astro.props;
 ---
 
@@ -43,6 +45,7 @@ const {
           {priceDescription}
         </div>
       </div>
+      <p class="text-gray-700 text-base py-1">{disclaimer}</p>
       {
         bullets ? (
           <ul class="text-gray-700 text-base py-3 list-inside text-left list-none">
