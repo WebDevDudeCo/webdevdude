@@ -14,11 +14,11 @@ const { title = "", logo = "" } = Astro.props;
   <nav
     class="flex items-center px-4 py-3 pl-6 pr-6 h-16 bg-primary justify-evenly"
   >
-    <div class="flex items-center mx-auto md:mx-0 text-white">
+    <div class="flex items-center mx-auto lg:mx-0 text-white">
       {logo && <img src={logo} alt="Logo" class="h-8 mr-2 pr-2" />}
       <a href="/" class="font-bold text-xl">{title}</a>
     </div>
-    <div class="hidden md:block">
+    <div class="hidden lg:block">
       <ul class="flex items-center space-x-2 text-white">
         <!-- <a href="/" class="group text-lg pr-6">
           Home
