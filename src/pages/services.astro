@@ -96,68 +96,72 @@ import PriceCard from "../components/PriceCard/PriceCard.astro";
         >
           Pricing
         </p>
-        <div class="pb-6">
-          <PriceCard
-            price={1000}
-            priceDescription="+ $5 /month hosting fee"
-            type="fixed"
-            packageName="Basic"
-            subTitle="5 Pages + Contact Page"
-            disclaimer="Future edits at $85/hour"
-            bullets={[
-              "High Performing Responsive Website",
-              "Google Business Setup",
-            ]}
-          />
+        <div class="pb-14 animate-fade-in flex flex-wrap justify-center">
+          <div class="w-full md:w-1/2 pb-6">
+            <PriceCard
+              price={1000}
+              priceDescription="+ $5 /month hosting fee"
+              type="fixed"
+              packageName="Basic"
+              subTitle="5 Pages + Contact Page"
+              disclaimer="Future edits at $85/hour"
+              bullets={[
+                "High Performing Responsive Website",
+                "Google Business Setup",
+              ]}
+            />
+          </div>
+          <div class="w-full md:w-1/2 pb-6 md:pl-4">
+            <PriceCard
+              price={75}
+              type="monthly"
+              packageName="Partnership"
+              buttonLabel="Let's Partner"
+              priceDescription="Valid for the first 6 months, then $100/month"
+              description="$0 Down"
+              subTitle="5 Pages + Contact Page"
+              bullets={[
+                "High Performing Responsive Website",
+                "Unlimited Edits & Support",
+                "Google Business Setup",
+                "Traffic Boosting & SEO",
+                "Hosting Included!",
+              ]}
+            />
+          </div>
         </div>
-        <PriceCard
-          price={75}
-          type="monthly"
-          packageName="Partnership"
-          buttonLabel="Let's Partner"
-          priceDescription="Valid for the first 6 months, then $100/month"
-          description="$0 Down"
-          subTitle="5 Pages + Contact Page"
-          bullets={[
-            "High Performing Responsive Website",
-            "Unlimited Edits & Support",
-            "Google Business Setup",
-            "Traffic Boosting & SEO",
-            "Hosting Included!",
-          ]}
-        />
       </div>
     </div>
+
+    <script>
+      document.addEventListener("astro:page-load", () => {
+        const cards = document.querySelectorAll(".animate-fade-in");
+        const animateCards = () => {
+          cards.forEach((card) => {
+            const cardTop = card.getBoundingClientRect().top;
+            const cardBottom = card.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+            if (cardTop < windowHeight && cardBottom >= 0) {
+              card.classList.add("animate-fade-in-active");
+            }
+          });
+        };
+        animateCards();
+        window.addEventListener("scroll", animateCards);
+      });
+    </script>
   </Main>
 
-  <script>
-    document.addEventListener("astro:page-load", () => {
-      const cards = document.querySelectorAll(".animate-fade-in");
-      const animateCards = () => {
-        cards.forEach((card) => {
-          const cardTop = card.getBoundingClientRect().top;
-          const cardBottom = card.getBoundingClientRect().bottom;
-          const windowHeight = window.innerHeight;
-          if (cardTop < windowHeight && cardBottom >= 0) {
-            card.classList.add("animate-fade-in-active");
-          }
-        });
-      };
-      animateCards();
-      window.addEventListener("scroll", animateCards);
-    });
-  </script>
+  <style>
+    .hidden {
+      opacity: 0;
+    }
+    .animate-fade-in {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .animate-fade-in-active {
+      opacity: 1;
+    }
+  </style>
 </Layout>
-
-<style>
-  .hidden {
-    opacity: 0;
-  }
-  .animate-fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-  .animate-fade-in-active {
-    opacity: 1;
-  }
-</style>

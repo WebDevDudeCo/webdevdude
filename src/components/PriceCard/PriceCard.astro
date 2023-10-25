@@ -25,12 +25,14 @@ const {
 } = Astro.props;
 ---
 
-<div class="w-full border border-gray-300 rounded-lg shadow-xl">
+<div
+  class={`w-full border border-gray-300 rounded-lg shadow-xl h-full flex flex-col`}
+>
   <div class="bg-paletteColor1 text-white font-bold py-2 px-4 rounded-t-lg">
     {packageName}
   </div>
-  <div class="bg-white rounded-lg overflow-hidden relative">
-    <div class="px-6 py-4 text-center">
+  <div class="bg-white rounded-lg overflow-hidden relative h-full">
+    <div class="px-6 py-4 text-center h-full">
       <p class="text-paletteColor1 font-bold px-4 rounded">{subTitle}</p>
       <p class="text-gray-700 text-base py-3">{description}</p>
       <div class="font-bold text-4xl mb-2 relative">
@@ -66,13 +68,13 @@ const {
         ) : null
       }
     </div>
-    <div class="px-6 py-4 bg-paletteColor1 text-center">
+    <div class="px-6 py-4 bg-paletteColor1 text-center bottom-0 sticky">
       <a
         href="/contact"
         class="block text-white font-bold hover:text-paletteColor2 duration-300 py-2 px-4 rounded"
       >
         {buttonLabel}
-        <span class="text-paletteColor2">&rarr;</span>
+        <span class="text-paletteColor2 pl-2">&rarr;</span>
       </a>
     </div>
   </div>
