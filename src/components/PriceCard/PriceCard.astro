@@ -1,18 +1,22 @@
 ---
 import CircleCheck from "../Icons/CircleCheck.astro";
+import PriceModal, { type PriceModalProps } from "../Modals/PriceModal.astro";
 interface Props {
+  id: string;
   subTitle: string;
   price: number;
   type: string;
   description?: string;
   priceDescription?: string;
+  priceDescription2?: string;
   packageName: string;
   buttonLabel?: string;
   bullets?: string[];
-  disclaimer?: string;
+  packageDetails: PriceModalProps;
 }
 
 const {
+  id,
   subTitle,
   price,
   description,
@@ -21,7 +25,8 @@ const {
   type,
   buttonLabel = "Let's Get Started",
   priceDescription,
-  disclaimer,
+  priceDescription2,
+  packageDetails,
 } = Astro.props;
 ---
 
@@ -46,8 +51,19 @@ const {
         <div class="text-gray-500 text-xs pt-2">
           {priceDescription}
         </div>
+        {
+          priceDescription2 && (
+            <div class="text-gray-500 text-xs pt-2">{priceDescription2}</div>
+          )
+        }
       </div>
-      <p class="text-gray-700 text-base py-1">{disclaimer}</p>
+      <div class="py-2">
+        <button
+          id={`price-modal-toggle-${id}`}
+          class="text-base inline-block bg-paletteColor4 hover:bg-paletteColor1 text-white font-bold py-2 px-4 rounded"
+          >Price Breakdown</button
+        >
+      </div>
       {
         bullets ? (
           <ul class="text-gray-700 text-base py-3 list-inside text-left list-none">
@@ -79,3 +95,61 @@ const {
     </div>
   </div>
 </div>
+
+<PriceModal id={id} />
+
+<script define:vars={{ id, packageName, subTitle, packageDetails }}>
+document.addEventListener("astro:page-load", () => {
+  const toggle = document.getElementById(`price-modal-toggle-${id}`);
+
+  toggle?.addEventListener("click", () => {
+    const modal = document.getElementById(`price-modal-${id}`);
+    const modalTitle = document.getElementById(`price-modal-title-${id}`);
+    const modalServiceDesc = document.getElementById(
+      `price-modal-service-desc-${id}`
+    );
+    const modalTypeTitle = document.getElementById(
+      `price-modal-type-title-${id}`
+    );
+    const modalTypeDesc = document.getElementById(
+      `price-modal-type-desc-${id}`
+    );
+    const modalFees = document.getElementById(
+      `price-modal-domain-hosting-fees-${id}`
+    );
+    const modalAddOns = document.getElementById(`price-modal-add-ons-${id}`);
+    const modalAddOns2 = document.getElementById(
+      `price-modal-add-ons-2-${id}`
+    );
+    const modalnote = document.getElementById(`price-modal-note-desc-${id}`);
+
+    modal?.classList.add("block");
+    modal?.classList.remove("hidden");
+
+    if (modalTitle) {
+      modalTitle.textContent = `${packageDetails.title}`;
+    }
+    if (modalServiceDesc) {
+      modalServiceDesc.textContent = `${packageDetails.service}`;
+    }
+    if (modalTypeTitle) {
+      modalTypeTitle.textContent = `${packageDetails.type}`;
+    }
+    if (modalTypeDesc) {
+      modalTypeDesc.textContent = `${packageDetails.typeDesc}`;
+    }
+    if (modalFees) {
+      modalFees.textContent = `${packageDetails.domainHostingFees}`;
+    }
+    if (modalAddOns) {
+      modalAddOns.textContent = `${packageDetails.addOnServicesFees}`;
+    }
+    if (modalAddOns2) {
+      modalAddOns2.textContent = `${packageDetails.addOnServicesFees2}`;
+    }
+    if (modalnote) {
+      modalnote.textContent = `${packageDetails.noteDesc}`;
+    }
+  });
+});
+</script>

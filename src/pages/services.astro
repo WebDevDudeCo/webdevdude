@@ -49,7 +49,6 @@ import PriceCard from "../components/PriceCard/PriceCard.astro";
             "On-page SEO",
           ]}
           modalBody="Our specialty? Crafting a fully responsive, custom website from scratch. No pre-made templates here. You'll have 5 unique pages at your disposal, including a sleek contact page. We write the code for a unique touch. Plus, we work our SEO magic for better visibility."
-          href="/services"
           imageSrc="/images/computer.webp"
         />
       </div>
@@ -64,7 +63,6 @@ import PriceCard from "../components/PriceCard/PriceCard.astro";
           ]}
           selectPlansOnly={true}
           modalBody="Simplicity is our game. With us, you've got the freedom to edit and update your site without constraints. Need a last-minute promo or a fresh offer? We're on it, no waiting around. We're not your typical techies; we're just a call or text away for all your support and change needs. And if your site could use a touch of visual flair, we've got the design skills to make it pop."
-          href="/services"
           imageSrc="/images/edit.webp"
         />
       </div>
@@ -74,7 +72,6 @@ import PriceCard from "../components/PriceCard/PriceCard.astro";
           title="Google Business Account"
           bullets={["Setup & optimization"]}
           modalBody="Now, let's chat about Google, the big player in the online game. We're here to help you establish a robust Google Business presence for boosted online visibility. Need assistance with setting up and optimizing your Google Business Account? You're covered. Our mission is making your mark in the digital world, and we're your guides with a friendly, knowledgeable touch."
-          href="/services"
           imageSrc="/images/business.webp"
         />
       </div>
@@ -85,7 +82,6 @@ import PriceCard from "../components/PriceCard/PriceCard.astro";
           selectPlansOnly={true}
           bullets={["High-ranking, SEO-friendly website", "We handle it all"]}
           modalBody="Let's get straight to the point. Our top goal? Driving traffic to your website, ultimately boosting your business. How do we do it? By crafting a high-ranking, top-performing website that secures prime real estate in Google's search results. And here's the kicker: we handle all the nitty-gritty details, so you can leave the tech stuff to us."
-          href="/services"
           imageSrc="/images/traffic.webp"
         />
       </div>
@@ -99,12 +95,28 @@ import PriceCard from "../components/PriceCard/PriceCard.astro";
         <div class="pb-14 animate-fade-in flex flex-wrap justify-center">
           <div class="w-full md:w-1/2 pb-6">
             <PriceCard
+              packageDetails={{
+                title: "Basic",
+                service:
+                  "5 Page Informational Website + Contact Page and Google Business Profile Setup",
+                type: "Fixed Payment",
+                typeDesc:
+                  "Make a one-time payment of $1000 after the project is completed.",
+                domainHostingFees:
+                  "An annual payment of $80/year that covers hosting and domain expenses. Please note that prices may vary depending on the domain chosen by the client, as well as the hosting costs.",
+                addOnServicesFees:
+                  "If you need additional web pages, they can be added at a cost of $100 per page.",
+                addOnServicesFees2:
+                  "For future edits, the cost is $85 per hour.",
+                noteDesc:
+                  "If you plan on frequently updating your site with promotions, testimonials, packages, and more, you might be interested in our Partnership package.",
+              }}
+              id="1"
               price={1000}
-              priceDescription="+ $5 /month hosting fee"
+              priceDescription2="+ $80 /year"
               type="fixed"
               packageName="Basic"
               subTitle="5 Pages + Contact Page"
-              disclaimer="Future edits at $85/hour"
               bullets={[
                 "High Performing Responsive Website",
                 "Google Business Setup",
@@ -113,11 +125,29 @@ import PriceCard from "../components/PriceCard/PriceCard.astro";
           </div>
           <div class="w-full md:w-1/2 pb-6 md:pl-4">
             <PriceCard
+              id="2"
+              packageDetails={{
+                title: "Partnership",
+                service:
+                  "5 Page Informational Website + Contact Page and Google Business Profile Setup",
+                type: "Monthly Subscription",
+                typeDesc:
+                  "Start with a special introductory rate of $75 per month for the first 6 months. After the first 6 months, the monthly cost increases to $100, but it includes hosting and unlimited edits/updates.",
+                domainHostingFees:
+                  "An annual fee of $20 for your domain. Please note that prices may vary depending on the domain picked by the client.",
+                addOnServicesFees:
+                  "If you need additional web pages, they can be added at a cost of $100 per page.",
+                addOnServicesFees2:
+                  "If you need extensive updates to the site, the cost is $85 per hour. Standard updates, such as adding pictures, testimonials, new packages, and promotions, are included in this package at no additional cost.",
+                noteDesc:
+                  "For the first year, the costs between the two packages are about the same, roughly $1070. After that, it depends on how often you'll be updating your site. If you don't think you will be updating it very often, then the lump sum payment in the Basic Package might be the way to go.",
+              }}
               price={75}
               type="monthly"
               packageName="Partnership"
               buttonLabel="Let's Partner"
-              priceDescription="Valid for the first 6 months, then $100/month"
+              priceDescription="Valid for the first 6 months, then $100/month."
+              priceDescription2=" + $20 /year"
               description="$0 Down"
               subTitle="5 Pages + Contact Page"
               bullets={[
