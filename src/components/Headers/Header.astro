@@ -12,15 +12,16 @@ const { title = "", logo = "" } = Astro.props;
 
 <header class="text-primary fixed w-full z-10 shadow-xl font-base top-0">
   <nav
-    class="flex items-center px-4 py-3 pl-6 pr-6 h-16 bg-primary justify-evenly"
+    class="flex items-center px-4 py-3 pl-6 pr-6 h-16 bg-primary justify-center"
   >
-    <div class="flex items-center mx-auto lg:mx-0 text-white">
-      {logo && <img src={logo} alt="Logo" class="h-8 mr-2 pr-2" />}
-      <a href="/" class="font-bold text-xl">{title}</a>
-    </div>
-    <div class="hidden lg:block">
-      <ul class="flex items-center space-x-2 text-white">
-        <!-- <a href="/" class="group text-lg pr-6">
+    <div class="w-[1200px] flex justify-between">
+      <div class="flex items-center w-fit mx-auto lg:mx-0 text-white">
+        {logo && <img src={logo} alt="Logo" class="h-8 mr-2 pr-2" />}
+        <a href="/" class="font-bold text-xl">{title}</a>
+      </div>
+      <div class="hidden lg:block w-fit">
+        <ul class="flex items-center space-x-2 text-white">
+          <!-- <a href="/" class="group text-lg pr-6">
           Home
           <span
             class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-paletteColor4"
@@ -32,19 +33,20 @@ const { title = "", logo = "" } = Astro.props;
             class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-paletteColor4"
           ></span>
         </a> -->
-        <a href="/services" class="group text-lg pr-6">
-          Services
-          <span
-            class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-paletteColor4"
-          ></span>
-        </a>
-        <a href="/contact" class="group transition text-lg pr-6">
-          Contact
-          <span
-            class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-paletteColor4"
-          ></span>
-        </a>
-      </ul>
+          <a href="/services" class="group text-lg pr-6">
+            Services
+            <span
+              class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-paletteColor4"
+            ></span>
+          </a>
+          <a href="/contact" class="group transition text-lg pr-6">
+            Contact
+            <span
+              class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-paletteColor4"
+            ></span>
+          </a>
+        </ul>
+      </div>
     </div>
 
     <MobileNav />
