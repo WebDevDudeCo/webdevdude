@@ -3,162 +3,225 @@ import Card from "../components/Card/Card.astro";
 import Main from "../components/Main/Main.astro";
 import Layout from "../layouts/Layout.astro";
 import PriceCard from "../components/PriceCard/PriceCard.astro";
+import FlexSection from "../components/FlexSection/FlexSection.astro";
 ---
 
 <Layout title="Template Title">
   <Main>
-    <div class="min-h-screen flex flex-col items-center">
-      <div class="animate-fade-in">
-        <p class="text-3xl font-bold text-paletteColor1 mb-4 pb-2">
-          So, What Do <span class="text-paletteColor3">We</span> Do<span
-            class="text-paletteColor3">?</span
+    <div class="animate-fade-in flex justify-center">
+      <p class="text-3xl font-bold text-paletteColor1 mb-4 pb-2">
+        So, What Do <span class="text-paletteColor3">We</span> Do<span
+          class="text-paletteColor3">?</span
+        >
+      </p>
+    </div>
+    <div class="animate-fade-in">
+      <div class="pb-8">
+        <p class="text-lg italic text-gray-800 mb-4 pb-2 relative">
+          <span class="quotation-mark text-paletteColor3 text-3xl font-mono"
+            >"</span
+          >
+           At WebDevDude, we're not just a web development service; we're your
+          trusty allies in the online world. Our mission? Making your online
+          presence hassle-free and helping it stand out. You handle <strong
+            class="font-bold text-paletteColor3">your business</strong
+          >, we handle the tech. We're just a call or text away. Let's take your
+          online game up a notch with our web services.
+          <span class="quotation-mark text-paletteColor3 text-3xl font-mono"
+            >"</span
           >
         </p>
+        <div class="left-1/4 w-3/5 h-0.5 bg-paletteColor4 mx-auto"></div>
       </div>
-      <div class="animate-fade-in">
-        <div class="pb-8">
-          <p class="text-lg italic text-gray-800 mb-4 pb-2 relative">
-            <span class="quotation-mark text-paletteColor3 text-3xl font-mono"
-              >"</span
-            >
-             At WebDevDude, we're not just a web development service; we're your
-            trusty allies in the online world. Our mission? Making your online
-            presence hassle-free and helping it stand out. You handle <strong
-              class="font-bold text-paletteColor3">your business</strong
-            >, we handle the tech. We're just a call or text away. Let's take
-            your online game up a notch with our web services.
-            <span class="quotation-mark text-paletteColor3 text-3xl font-mono"
-              >"</span
-            >
+    </div>
+    <!-- DESKTOP VIEW -->
+    <div class="animate-fade-in">
+      <FlexSection
+        id="1"
+        sectionWidth="1200"
+        title="Custom Responsive Website"
+        content="Our specialty? Crafting a fully responsive, custom website from scratch. No pre-made templates here. You'll have 5 unique pages at your disposal, including a sleek contact page. We write the code for a unique touch. Plus, we work our SEO magic for better visibility."
+        imageSrc="/images/computer.webp"
+        marginTop="mt-[50px]"
+        bullets={[
+          "5 unique pages + contact page",
+          "Handwritten code for design control",
+          "On-page SEO",
+        ]}
+      />
+      <FlexSection
+        id="2"
+        sectionWidth="1200"
+        title="Unlimited Edits & Graphics"
+        content="Simplicity is our game. With us, you've got the freedom to edit and update your site without constraints. Need a last-minute promo or a fresh offer? We're on it, no waiting around. We're not your typical techies; we're just a call or text away for all your support and change needs. And if your site could use a touch of visual flair, we've got the design skills to make it pop."
+        imageSrc="/images/edit.webp"
+        flipLayout={true}
+        marginTop="mt-[100px]"
+        bullets={[
+          "Quick edits for promos",
+          "Easy call or text support",
+          "Graphics included",
+        ]}
+      />
+      <FlexSection
+        id="3"
+        sectionWidth="1200"
+        title="Google Business Account"
+        content="Now, let's chat about Google, the big player in the online game. We're here to help you establish a robust Google Business presence for boosted online visibility. Need assistance with setting up and optimizing your Google Business Account? You're covered. Our mission is making your mark in the digital world, and we're your guides with a friendly, knowledgeable touch."
+        imageSrc="/images/business.webp"
+        marginTop="mt-[100px]"
+        bullets={["Setup & optimization"]}
+      />
+      <FlexSection
+        id="4"
+        sectionWidth="1200"
+        title="Lightning-Fast Google-Approved Sites"
+        content="We don't just build websites; we craft online experiences that load at warp speed, delight users, and get Google's seal of approval. Say goodbye to sluggish sites, and say hello to the future of web performance."
+        imageSrc="/images/traffic.webp"
+        marginTop="mt-[150px]"
+        marginBottom="mb-[100px]"
+        flipLayout={true}
+        bullets={[
+          "Achieve lightning-fast loading speeds",
+          "Ensure universal site access.",
+          "Implement cutting-edge development.",
+          "Enhance online visibility.",
+        ]}
+      />
+    </div>
+
+    <!-- MOBILE VIEW -->
+    <div class="block lg:hidden">
+      <div class="min-h-screen flex flex-col items-center">
+        <div class="pb-14 animate-fade-in justify-center">
+          <p
+            class="text-3xl font-bold text-paletteColor1 mb-4 pb-2 w-full justify-center inline-flex"
+          >
+            Services
           </p>
-          <div class="left-1/4 w-3/5 h-0.5 bg-paletteColor4 mx-auto"></div>
+          <Card
+            id="1"
+            title="Custom Responsive Website"
+            bullets={[
+              "5 unique pages + contact page",
+              "Handwritten code for design control",
+              "On-page SEO",
+            ]}
+            modalBody="Our specialty? Crafting a fully responsive, custom website from scratch. No pre-made templates here. You'll have 5 unique pages at your disposal, including a sleek contact page. We write the code for a unique touch. Plus, we work our SEO magic for better visibility."
+            imageSrc="/images/computer.webp"
+          />
+        </div>
+        <div class="pb-14 animate-fade-in">
+          <Card
+            id="2"
+            title="Unlimited Edits & Graphics"
+            bullets={[
+              "Quick edits for promos",
+              "Easy call or text support",
+              "Graphics included",
+            ]}
+            selectPlansOnly={true}
+            modalBody="Simplicity is our game. With us, you've got the freedom to edit and update your site without constraints. Need a last-minute promo or a fresh offer? We're on it, no waiting around. We're not your typical techies; we're just a call or text away for all your support and change needs. And if your site could use a touch of visual flair, we've got the design skills to make it pop."
+            imageSrc="/images/edit.webp"
+          />
+        </div>
+        <div class="pb-14 animate-fade-in">
+          <Card
+            id="3"
+            title="Google Business Account"
+            bullets={["Setup & optimization"]}
+            modalBody="Now, let's chat about Google, the big player in the online game. We're here to help you establish a robust Google Business presence for boosted online visibility. Need assistance with setting up and optimizing your Google Business Account? You're covered. Our mission is making your mark in the digital world, and we're your guides with a friendly, knowledgeable touch."
+            imageSrc="/images/business.webp"
+          />
+        </div>
+        <div class="pb-14 animate-fade-in">
+          <Card
+            id="4"
+            title="Lightning-Fast Google-Approved Sites"
+            selectPlansOnly={true}
+            bullets={[
+              "Achieve lightning-fast loading speeds",
+              "Ensure universal site access.",
+              "Implement cutting-edge development.",
+              "Enhance online visibility.",
+            ]}
+            modalBody="We don't just build websites; we craft online experiences that load at warp speed, delight users, and get Google's seal of approval. Say goodbye to sluggish sites, and say hello to the future of web performance."
+            imageSrc="/images/traffic.webp"
+          />
         </div>
       </div>
-      <div class="pb-14 animate-fade-in justify-center">
-        <p
-          class="text-3xl font-bold text-paletteColor1 mb-4 pb-2 w-full justify-center inline-flex"
-        >
-          Services
-        </p>
-        <Card
-          id="1"
-          title="Custom Responsive Website"
-          bullets={[
-            "5 unique pages + contact page",
-            "Handwritten code for design control",
-            "On-page SEO",
-          ]}
-          modalBody="Our specialty? Crafting a fully responsive, custom website from scratch. No pre-made templates here. You'll have 5 unique pages at your disposal, including a sleek contact page. We write the code for a unique touch. Plus, we work our SEO magic for better visibility."
-          imageSrc="/images/computer.webp"
-        />
-      </div>
-      <div class="pb-14 animate-fade-in">
-        <Card
-          id="2"
-          title="Unlimited Edits & Graphics"
-          bullets={[
-            "Quick edits for promos",
-            "Easy call or text support",
-            "Graphics included",
-          ]}
-          selectPlansOnly={true}
-          modalBody="Simplicity is our game. With us, you've got the freedom to edit and update your site without constraints. Need a last-minute promo or a fresh offer? We're on it, no waiting around. We're not your typical techies; we're just a call or text away for all your support and change needs. And if your site could use a touch of visual flair, we've got the design skills to make it pop."
-          imageSrc="/images/edit.webp"
-        />
-      </div>
-      <div class="pb-14 animate-fade-in">
-        <Card
-          id="3"
-          title="Google Business Account"
-          bullets={["Setup & optimization"]}
-          modalBody="Now, let's chat about Google, the big player in the online game. We're here to help you establish a robust Google Business presence for boosted online visibility. Need assistance with setting up and optimizing your Google Business Account? You're covered. Our mission is making your mark in the digital world, and we're your guides with a friendly, knowledgeable touch."
-          imageSrc="/images/business.webp"
-        />
-      </div>
-      <div class="pb-14 animate-fade-in">
-        <Card
-          id="4"
-          title="Traffic-Boosting Focus"
-          selectPlansOnly={true}
-          bullets={["High-ranking, SEO-friendly website", "We handle it all"]}
-          modalBody="Let's get straight to the point. Our top goal? Driving traffic to your website, ultimately boosting your business. How do we do it? By crafting a high-ranking, top-performing website that secures prime real estate in Google's search results. And here's the kicker: we handle all the nitty-gritty details, so you can leave the tech stuff to us."
-          imageSrc="/images/traffic.webp"
-        />
-      </div>
+    </div>
 
-      <div class="pb-14 animate-fade-in">
-        <p
-          class="text-3xl font-bold text-paletteColor1 mb-4 pb-2 w-full justify-center inline-flex"
-        >
-          Pricing
-        </p>
-        <div class="pb-14 animate-fade-in flex flex-wrap justify-center">
-          <div class="w-full md:w-1/2 pb-6">
-            <PriceCard
-              packageDetails={{
-                title: "Basic",
-                service:
-                  "5 Page Informational Website + Contact Page and Google Business Profile Setup",
-                type: "Fixed Payment",
-                typeDesc:
-                  "Make a one-time payment of $1000 after the project is completed.",
-                domainHostingFees:
-                  "An annual payment of $80/year that covers hosting and domain expenses. Please note that prices may vary depending on the domain chosen by the client, as well as the hosting costs.",
-                addOnServicesFees:
-                  "If you need additional web pages, they can be added at a cost of $100 per page.",
-                addOnServicesFees2:
-                  "For future edits, the cost is $85 per hour.",
-                noteDesc:
-                  "If you plan on frequently updating your site with promotions, testimonials, packages, and more, you might be interested in our Partnership package.",
-              }}
-              id="1"
-              price={1000}
-              priceDescription2="+ $80 /year"
-              type="fixed"
-              packageName="Basic"
-              subTitle="5 Pages + Contact Page"
-              bullets={[
-                "High Performing Responsive Website",
-                "Google Business Setup",
-              ]}
-            />
-          </div>
-          <div class="w-full md:w-1/2 pb-6 md:pl-4">
-            <PriceCard
-              id="2"
-              packageDetails={{
-                title: "Partnership",
-                service:
-                  "5 Page Informational Website + Contact Page and Google Business Profile Setup",
-                type: "Monthly Subscription",
-                typeDesc:
-                  "Start with a special introductory rate of $75 per month for the first 6 months. After the first 6 months, the monthly cost increases to $100, but it includes hosting and unlimited edits/updates.",
-                domainHostingFees:
-                  "An annual fee of $20 for your domain. Please note that prices may vary depending on the domain picked by the client.",
-                addOnServicesFees:
-                  "If you need additional web pages, they can be added at a cost of $100 per page.",
-                addOnServicesFees2:
-                  "If you need extensive updates to the site, the cost is $85 per hour. Standard updates, such as adding pictures, testimonials, new packages, and promotions, are included in this package at no additional cost.",
-                noteDesc:
-                  "For the first year, the costs between the two packages are about the same, roughly $1070. After that, it depends on how often you'll be updating your site. If you don't think you will be updating it very often, then the lump sum payment in the Basic Package might be the way to go.",
-              }}
-              price={75}
-              type="monthly"
-              packageName="Partnership"
-              buttonLabel="Let's Partner"
-              priceDescription="Valid for the first 6 months, then $100/month."
-              priceDescription2=" + $20 /year"
-              description="$0 Down"
-              subTitle="5 Pages + Contact Page"
-              bullets={[
-                "High Performing Responsive Website",
-                "Unlimited Edits & Support",
-                "Google Business Setup",
-                "Traffic Boosting & SEO",
-                "Hosting Included!",
-              ]}
-            />
-          </div>
+    <div class="pb-14 animate-fade-in">
+      <p
+        class="text-3xl font-bold text-paletteColor1 mb-4 pb-2 w-full justify-center inline-flex"
+      >
+        Pricing
+      </p>
+      <div class="pb-14 animate-fade-in flex flex-wrap justify-center">
+        <div class="w-full md:w-1/2 lg:w-4/12 pb-6">
+          <PriceCard
+            packageDetails={{
+              title: "Basic",
+              service:
+                "5 Page Informational Website + Contact Page and Google Business Profile Setup",
+              type: "Fixed Payment",
+              typeDesc:
+                "Make a one-time payment of $1000 after the project is completed.",
+              domainHostingFees:
+                "An annual payment of $80/year that covers hosting and domain expenses. Please note that prices may vary depending on the domain chosen by the client, as well as the hosting costs.",
+              addOnServicesFees:
+                "If you need additional web pages, they can be added at a cost of $100 per page.",
+              addOnServicesFees2: "For future edits, the cost is $85 per hour.",
+              noteDesc:
+                "If you plan on frequently updating your site with promotions, testimonials, packages, and more, you might be interested in our Partnership package.",
+            }}
+            id="1"
+            price={1000}
+            priceDescription2="+ $80 /year"
+            type="fixed"
+            packageName="Basic"
+            subTitle="5 Pages + Contact Page"
+            bullets={[
+              "High Performing Responsive Website",
+              "Google Business Setup",
+            ]}
+          />
+        </div>
+        <div class="w-full md:w-1/2 lg:w-4/12 pb-6 md:pl-4">
+          <PriceCard
+            id="2"
+            packageDetails={{
+              title: "Partnership",
+              service:
+                "5 Page Informational Website + Contact Page and Google Business Profile Setup",
+              type: "Monthly Subscription",
+              typeDesc:
+                "Start with a special introductory rate of $75 per month for the first 6 months. After the first 6 months, the monthly cost increases to $100, but it includes hosting and unlimited edits/updates.",
+              domainHostingFees:
+                "An annual fee of $20 for your domain. Please note that prices may vary depending on the domain picked by the client.",
+              addOnServicesFees:
+                "If you need additional web pages, they can be added at a cost of $100 per page.",
+              addOnServicesFees2:
+                "If you need extensive updates to the site, the cost is $85 per hour. Standard updates, such as adding pictures, testimonials, new packages, and promotions, are included in this package at no additional cost.",
+              noteDesc:
+                "For the first year, the costs between the two packages are about the same, roughly $1070. After that, it depends on how often you'll be updating your site. If you don't think you will be updating it very often, then the lump sum payment in the Basic Package might be the way to go.",
+            }}
+            price={75}
+            type="monthly"
+            packageName="Partnership"
+            buttonLabel="Let's Partner"
+            priceDescription="Valid for the first 6 months, then $100/month."
+            priceDescription2=" + $20 /year"
+            subTitle="5 Pages + Contact Page"
+            bullets={[
+              "High Performing Responsive Website",
+              "Unlimited Edits & Support",
+              "Google Business Setup",
+              "Traffic Boosting & SEO",
+              "Hosting Included!",
+            ]}
+          />
         </div>
       </div>
     </div>

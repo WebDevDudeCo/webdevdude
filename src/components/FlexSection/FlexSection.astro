@@ -1,0 +1,69 @@
+---
+import CircleCheck from "../Icons/CircleCheck.astro";
+interface Props {
+  id: string;
+  sectionWidth: string;
+  title: string;
+  content: string;
+  imageSrc?: string;
+  flipLayout?: boolean;
+  marginTop?: string;
+  marginBottom?: string;
+  bullets?: string[];
+}
+
+const {
+  id,
+  sectionWidth,
+  title,
+  content,
+  imageSrc,
+  marginTop,
+  marginBottom,
+  flipLayout = false,
+  bullets = [],
+} = Astro.props;
+---
+
+<div class={`hidden lg:block ${marginTop} ${marginBottom} animate-fade-in`}>
+  <section id={`flex-section-${id}`}>
+    <div class={`flex max-w-[${sectionWidth}px] items-center justify-between `}>
+      <!-- IF flipLayout IS FALSE, PUT IMAGE FIRST  -->
+      {
+        !flipLayout && imageSrc && (
+          <img src={imageSrc} alt={title} class={`w-2/4 pl-4 pr-4`} />
+        )
+      }
+      <div class={`w-2/4 pl-4 pr-4`}>
+        <p class="text-3xl font-bold text-paletteColor1 pb-4">{title}</p>
+        <p class="text-gray-600 flex h-fill pb-4">{content}</p>
+        <ul
+          class="text-gray-700 text-base py-3 list-inside text-left list-none"
+        >
+          {
+            bullets.map((bullet) => (
+              <li class="flex items-center pb-2">
+                <div class="pr-4">
+                  <CircleCheck
+                    width={"18"}
+                    height={"18"}
+                    fill="paletteColor3"
+                  />
+                </div>
+
+                {bullet}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- ELSE flipLayout IS TRUE, PUT IMAGE LAST  -->
+      {
+        flipLayout && imageSrc && (
+          <img src={imageSrc} alt={title} class={`w-2/4 pl-4 pr-4`} />
+        )
+      }
+    </div>
+  </section>
+</div>
